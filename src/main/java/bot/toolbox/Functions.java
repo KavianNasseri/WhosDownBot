@@ -42,6 +42,7 @@ public class Functions {
     }
     public static void disableButtons(Message message, int selected){
         int i=0;
+
 //        while(message.getButtons().get(i+1) != null){
 //            message.getButtons().set(selected,Button.success("Hello","hello"));
 //        }
