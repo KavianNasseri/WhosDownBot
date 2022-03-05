@@ -9,7 +9,7 @@ import javax.security.auth.login.LoginException;
 
 public class Main {
     public static void main(String[] args) throws LoginException {
-        JDA bot = JDABuilder.createDefault("OTQ5MTI3MjUwMzM3NDY4NDQ2.YiF1og.ajQ_MaNMEKgrEBzT1feSl_dMUdQ").setActivity(Activity.playing("With my balls")).build();
+        JDA bot = JDABuilder.createDefault("OTQ5MTI3MjUwMzM3NDY4NDQ2.YiF1og.whY9dnCFHWkzbeUi-st-famL29s").setActivity(Activity.playing("With my balls")).build();
         bot.addEventListener(new Events());
     }
 }

@@ -18,7 +18,7 @@ public class Functions {
         embed.setColor(Constants.EMBED_COLOR);
         embed.setTitle("What type of session are you planning?");
         channel.sendMessageEmbeds(embed.build()).setActionRow(Button.secondary(
-                "Gaming", Emoji.fromMarkdown(Constants.VIDEO_GAME)), Button.secondary("Studying", Emoji.fromMarkdown(Constants.BOOK)),
+                        "Gaming", Emoji.fromMarkdown(Constants.VIDEO_GAME)), Button.secondary("Studying", Emoji.fromMarkdown(Constants.BOOK)),
                 Button.secondary("Movie", Emoji.fromMarkdown(Constants.TV)),Button.primary("Custom","Custom")).queue();
     }
     public static void sessionInvite(MessageChannel channel, User inviter, String game) {
