@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import bot.toolbox.*;
+import net.dv8tion.jda.internal.requests.FunctionalCallback;
 
 import static bot.toolbox.Constants.PREFIX;
 
@@ -23,15 +24,18 @@ public class Events extends ListenerAdapter {
         // Session Command
         if (content.equals(PREFIX + "session"))
         {
-            MessageChannel channel = event.getChannel();
-            Functions.sessionRequest(channel);
+            Functions.sessionRequest(event);
         }
     }
     public void onButtonInteraction(ButtonInteractionEvent event){
         if(event.getComponentId().equals("Gaming")){
-            event.deferEdit().queue();
-            Functions.chooseGame(event.getChannel());
-            Functions.disableButtons(event.getMessage(),0);
+            if(event.getUser().getName().equals(Functions.requester)) {
+                Functions.disableButtons(event);
+                Functions.chooseGame(event.getChannel());
+            }
+            else{
+                event.reply("That is someone else's session request").setEphemeral(true).queue();
+            }
         }
     }
 }
